@@ -11,8 +11,12 @@ podTemplate(containers: [
             container('python') {
                 stages {
                     stage('Checkout Code') {
-			echo 'Pull Code...'
-			sh 'git clone https://github.com/guoming-loh/jenkins_python.git'
+                        steps {
+                            script {
+                                echo 'Pull Code...'
+                                sh 'git clone https://github.com/guoming-loh/jenkins_python.git'
+                            }
+                        }
                     }
                 }
             }
