@@ -25,6 +25,7 @@ podTemplate(containers: [
 		stage('Static Code Check') {
 			echo 'Static Code check using pylint'
 			sh 'pylint jenkins_python/system_monitor.py'
+		}
             }
         }
     }
