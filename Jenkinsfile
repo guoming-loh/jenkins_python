@@ -16,22 +16,7 @@ podTemplate(containers: [
                         sh 'python -V'
                         sh 'git clone https://github.com/guoming-loh/jenkins_python.git'
                         sh 'ls -la jenkins_python'
-                    }
-                    stage('Installing packages') {
-                        sh 'pwd'
-                        sh 'ls -la'
-                        sh 'python -V'
-                        sh 'git clone https://github.com/guoming-loh/jenkins_python.git'
-                        sh 'ls -la jenkins_python'
-                    }
-                    stage('Static Code Check') {
-                        sh 'pwd'
-                        sh 'ls -la'
-                        sh 'python -V'
-                        sh 'git clone https://github.com/guoming-loh/jenkins_python.git'
-                        sh 'ls -la jenkins_python'
-                    }
-                    stage('Unit Test Check') {
+                        sh 'python3 jenkins_python/system_monitor.py'
                     }
                 }
             }
