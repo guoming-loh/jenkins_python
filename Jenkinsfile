@@ -20,10 +20,10 @@ podTemplate(containers: [
 			sh 'apt install -y pip'
 			sh 'apt install -y python3-requests'
 			sh 'apt install -y python3-psutil'
+			sh 'apt install -y pylint'
 		}
 		stage('Static Code Check') {
-			echo 'Static Code check using pylint'
-			sh 'pylint --version'
+			sh 'pylint jenkins_python/system_monitor.py --output-format=json:static_code_result.json, colorized'
 		}
             }
         }
