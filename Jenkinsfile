@@ -9,10 +9,19 @@ podTemplate(containers: [
     node(POD_LABEL) {
         stage('Get a Python Project') {
             container('python') {
-		 stage('Checkout Code') {
+		stage('Checkout Code') {
 			echo 'Pull Code...'
 			sh 'git clone https://github.com/guoming-loh/jenkins_python.git'
                  }
+		stage('Installing Packages') {
+			echo 'Installing Packages...'
+			sh 'apt update'
+			sh 'apt install -y python3'
+			sh 'apt install -y pip'
+			sh 'apt install -y python3-requests'
+			sh 'apt install -y python3-psutil'
+			sh 'apt install -y pylint'
+		}
             }
         }
     }
